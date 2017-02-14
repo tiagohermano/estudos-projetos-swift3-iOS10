@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cNb-m1-7He">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cara ou Coroa-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Cara_ou_Coroa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4AJ-Tn-dee">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Nd7-wL-fPs">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="NYa-eA-hG8"/>
+                                            <constraint firstAttribute="height" constant="128" id="dSz-m7-LsO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXp-6x-jkC">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="271" id="1fi-7W-0X7"/>
+                                            <constraint firstAttribute="height" constant="74" id="Lhb-fD-r3N"/>
+                                        </constraints>
+                                        <state key="normal" image="botao_jogar"/>
+                                        <connections>
+                                            <segue destination="Nn5-J7-agH" kind="show" identifier="jogarMoeda" id="5ev-Be-y2l"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32156862745098042" green="0.70196078431372544" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4AJ-Tn-dee" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3Pc-EO-Spu"/>
+                            <constraint firstItem="4AJ-Tn-dee" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qlg-PE-e25"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cara ou Coroa" id="BmU-6Q-2Jl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968.79999999999995" y="42.728635682158924"/>
+        </scene>
+        <!--Detalhes View Controller-->
+        <scene sceneID="Q9N-c7-tq2">
+            <objects>
+                <viewController id="Nn5-J7-agH" customClass="DetalhesViewController" customModule="Cara_ou_Coroa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TyT-wS-hIJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Xq-TJ-JKH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ja1-GJ-CMQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moeda_cara" translatesAutoresizingMaskIntoConstraints="NO" id="05o-Am-EXw">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="305" id="H5V-MQ-qd8"/>
+                                    <constraint firstAttribute="height" constant="304" id="eCY-JQ-a2K"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32156862745098042" green="0.70196078431372544" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="05o-Am-EXw" firstAttribute="centerY" secondItem="ja1-GJ-CMQ" secondAttribute="centerY" id="JAO-kx-Amj"/>
+                            <constraint firstItem="05o-Am-EXw" firstAttribute="centerY" secondItem="ja1-GJ-CMQ" secondAttribute="centerY" id="KLj-e8-AhI"/>
+                            <constraint firstItem="05o-Am-EXw" firstAttribute="centerX" secondItem="ja1-GJ-CMQ" secondAttribute="centerX" id="Q8Q-Nx-3Le"/>
+                            <constraint firstItem="05o-Am-EXw" firstAttribute="centerX" secondItem="ja1-GJ-CMQ" secondAttribute="centerX" id="wNg-hk-9h2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="moedaImageView" destination="05o-Am-EXw" id="07G-IC-GKv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqh-uv-NG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620" y="44.527736131934034"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FJd-qt-csF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cNb-m1-7He" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eaj-vf-qVN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="OVq-im-pgo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yAu-NC-j7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="301.60000000000002" y="-638.2308845577212"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="botao_jogar" width="271" height="74"/>
+        <image name="logo" width="321" height="154"/>
+        <image name="moeda_cara" width="305" height="304"/>
+    </resources>
+</document>
