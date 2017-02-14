@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alerta/ViewController.swift"
+            timestampString = "508769482.728644"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alerta.ViewController.__deallocating_deinit"
+                  moduleName = "Alerta"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev12/Documents/Dev13/Projetos/Alerta/Alerta/ViewController.swift"
+                  timestampString = "508769484.061464"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alerta.ViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Alerta.ViewController"
+                  moduleName = "Alerta"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev12/Documents/Dev13/Projetos/Alerta/Alerta/ViewController.swift"
+                  timestampString = "508769484.06806"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "107">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alerta.ViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Alerta.ViewController"
+                  moduleName = "Alerta"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev12/Documents/Dev13/Projetos/Alerta/Alerta/ViewController.swift"
+                  timestampString = "508769484.074987"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alerta.ViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Alerta.ViewController&gt;"
+                  moduleName = "Alerta"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev12/Documents/Dev13/Projetos/Alerta/Alerta/ViewController.swift"
+                  timestampString = "508769484.08141"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alerta.ViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Alerta.ViewController&gt;"
+                  moduleName = "Alerta"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dev12/Documents/Dev13/Projetos/Alerta/Alerta/ViewController.swift"
+                  timestampString = "508769484.087403"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "105">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
