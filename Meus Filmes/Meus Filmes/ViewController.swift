@@ -48,6 +48,18 @@ class ViewController: UITableViewController {
         
         return celula
     }
+    
+    // Método usado para passar dados de um ViewController para outro
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detalhesFilme" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let filmeSelecionado = self.filmes[indexPath.row]
+                let viewControllerDestino = segue.destination as! DetalhesFilmeViewController
+                viewControllerDestino.filme = filmeSelecionado
+                
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

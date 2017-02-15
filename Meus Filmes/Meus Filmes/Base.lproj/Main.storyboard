@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oH3-4F-BKh">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oH3-4F-BKh">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,30 +16,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaReuso" id="bJc-6y-fYa" customClass="FilmeCelula" customModule="Meus_Filmes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bJc-6y-fYa" id="5In-CX-0JF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                    <frame key="frameInset" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VtQ-SS-BOk">
-                                            <rect key="frame" x="8" y="8" width="84" height="84"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="84" id="2ER-wL-z7W"/>
                                                 <constraint firstAttribute="width" constant="84" id="yi8-df-48Q"/>
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0ur-53-u0X">
-                                            <rect key="frame" x="100" y="8" width="53" height="52"/>
+                                            <frame key="frameInset" minX="100" minY="8" width="53" height="52"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWh-zX-BYL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="52.5" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngX-ai-7j0">
-                                                    <rect key="frame" x="0.0" y="34" width="52.5" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                     <color key="textColor" red="0.48314790575916233" green="0.48314790575916233" blue="0.48314790575916233" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -61,6 +55,7 @@
                                     <outlet property="descricaoLabel" destination="ngX-ai-7j0" id="O2s-rG-Bif"/>
                                     <outlet property="filmeImageView" destination="VtQ-SS-BOk" id="hcN-Au-QuH"/>
                                     <outlet property="tituloLabel" destination="CWh-zX-BYL" id="T3f-bc-Cxt"/>
+                                    <segue destination="h3G-KG-6dS" kind="show" identifier="detalhesFilme" id="8al-8e-ccB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,6 +69,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzA-Ie-3zA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1108" y="143.47826086956522"/>
+        </scene>
+        <!--Detalhes Filme View Controller-->
+        <scene sceneID="l0A-Vp-wrP">
+            <objects>
+                <viewController id="h3G-KG-6dS" customClass="DetalhesFilmeViewController" customModule="Meus_Filmes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K8Q-aW-TM6"/>
+                        <viewControllerLayoutGuide type="bottom" id="d6Y-LZ-XwI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RlG-cf-Os8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="filme2" translatesAutoresizingMaskIntoConstraints="NO" id="1bD-fQ-rdE">
+                                <frame key="frameInset" minX="16" minY="72" width="343" height="344"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ll8-Qn-A5E">
+                                <frame key="frameInset" minX="16" minY="424" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BH9-dy-WQw">
+                                <frame key="frameInset" minX="16" minY="453" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.47360416666666671" green="0.47360416666666671" blue="0.47360416666666671" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="descricaoLabel" destination="BH9-dy-WQw" id="nYC-2Q-s5Q"/>
+                        <outlet property="filmeImageView" destination="1bD-fQ-rdE" id="eAK-Za-73E"/>
+                        <outlet property="tituloLabel" destination="ll8-Qn-A5E" id="GOS-rc-PLE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sSN-PT-fEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1832.5" y="142.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MOG-gh-j0s">
@@ -94,4 +132,7 @@
             <point key="canvasLocation" x="168.80000000000001" y="143.47826086956522"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="filme2" width="16" height="16"/>
+    </resources>
 </document>

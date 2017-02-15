@@ -14,6 +14,7 @@
 		5C25DA941E53B34100501B99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C25DA921E53B34100501B99 /* LaunchScreen.storyboard */; };
 		5C25DA9C1E53B55400501B99 /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C25DA9B1E53B55400501B99 /* Filme.swift */; };
 		5C25DA9E1E53C92600501B99 /* FilmeCelula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C25DA9D1E53C92600501B99 /* FilmeCelula.swift */; };
+		9B2A02031E54676500D69560 /* DetalhesFilmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A02021E54676500D69560 /* DetalhesFilmeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5C25DA951E53B34100501B99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C25DA9B1E53B55400501B99 /* Filme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
 		5C25DA9D1E53C92600501B99 /* FilmeCelula.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmeCelula.swift; sourceTree = "<group>"; };
+		9B2A02021E54676500D69560 /* DetalhesFilmeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesFilmeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				5C25DA9B1E53B55400501B99 /* Filme.swift */,
 				5C25DA9D1E53C92600501B99 /* FilmeCelula.swift */,
 				5C25DA8D1E53B34100501B99 /* Main.storyboard */,
+				9B2A02021E54676500D69560 /* DetalhesFilmeViewController.swift */,
 				5C25DA901E53B34100501B99 /* Assets.xcassets */,
 				5C25DA921E53B34100501B99 /* LaunchScreen.storyboard */,
 				5C25DA951E53B34100501B99 /* Info.plist */,
@@ -144,6 +147,7 @@
 			files = (
 				5C25DA8C1E53B34100501B99 /* ViewController.swift in Sources */,
 				5C25DA9C1E53B55400501B99 /* Filme.swift in Sources */,
+				9B2A02031E54676500D69560 /* DetalhesFilmeViewController.swift in Sources */,
 				5C25DA8A1E53B34100501B99 /* AppDelegate.swift in Sources */,
 				5C25DA9E1E53C92600501B99 /* FilmeCelula.swift in Sources */,
 			);
@@ -267,6 +271,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Meus Filmes/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tiagohermano.Meus-Filmes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -279,6 +284,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Meus Filmes/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tiagohermano.Meus-Filmes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -305,6 +311,7 @@
 				5C25DA9A1E53B34100501B99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
