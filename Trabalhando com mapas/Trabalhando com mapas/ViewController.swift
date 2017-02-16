@@ -9,15 +9,27 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapa: MKMapView!
+    var gerenciadorLocal = CLLocationManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Metodo responsavel por definir a classe que delegara o gerenciadorLocal
+        gerenciadorLocal.delegate = self
         
-        let latitude: CLLocationDegrees = -16.680588
+        // Metodo resposavel por definir a precisao do GP(No caso: Melhor Precisao)
+        gerenciadorLocal.desiredAccuracy = kCLLocationAccuracyBest
+        
+        // Metodo responsavel por pedir autorizacao para acessar a localizacao do dispositivo
+        gerenciadorLocal.requestWhenInUseAuthorization()
+        
+        // Metodo responsavel por atualizar a localizacao do dispositivo
+        gerenciadorLocal.startUpdatingLocation()
+        
+        /*let latitude: CLLocationDegrees = -16.680588
         let longitude: CLLocationDegrees = -49.256327
         let localizacao: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
         
@@ -36,7 +48,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         anotacao.title = "Praça Cívica"
         anotacao.subtitle = "Praça localizada no centro da cidade de Goiânia"
         
-        mapa.addAnnotation(anotacao)
+        mapa.addAnnotation(anotacao)*/
     }
 
     override func didReceiveMemoryWarning() {

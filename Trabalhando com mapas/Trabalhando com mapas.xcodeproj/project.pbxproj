@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					9BB4AAC71E55D42000B6D9CA = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = T3D439LYC3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -258,6 +259,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T3D439LYC3;
 				INFOPLIST_FILE = "Trabalhando com mapas/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.Trabalhando-com-mapas";
@@ -270,6 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T3D439LYC3;
 				INFOPLIST_FILE = "Trabalhando com mapas/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.Trabalhando-com-mapas";
@@ -297,6 +300,7 @@
 				9BB4AADC1E55D42000B6D9CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
