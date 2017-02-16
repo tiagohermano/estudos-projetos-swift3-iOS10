@@ -27,7 +27,16 @@ class ViewController: UIViewController, MKMapViewDelegate {
         let areaVisualizacao: MKCoordinateSpan = MKCoordinateSpanMake(deltaLatitude, deltaLongitude)
         
         let regiao: MKCoordinateRegion = MKCoordinateRegionMake(localizacao, areaVisualizacao)
+        
         mapa.setRegion(regiao, animated: true)
+        
+        // Configurando Anotação no mapa (Marcador)
+        let anotacao = MKPointAnnotation()
+        anotacao.coordinate = localizacao // ou anotacao.coordinate.latitude = ... / anotacao.coordinate.longitude = ...
+        anotacao.title = "Praça Cívica"
+        anotacao.subtitle = "Praça localizada no centro da cidade de Goiânia"
+        
+        mapa.addAnnotation(anotacao)
     }
 
     override func didReceiveMemoryWarning() {
