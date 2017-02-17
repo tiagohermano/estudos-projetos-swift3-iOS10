@@ -29,7 +29,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // Metodo responsavel por atualizar a localizacao do dispositivo
         gerenciadorLocal.startUpdatingLocation()
         
-        /*let latitude: CLLocationDegrees = -16.680588
+        /*
+        let latitude: CLLocationDegrees = -16.680588
         let longitude: CLLocationDegrees = -49.256327
         let localizacao: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
         
@@ -48,9 +49,30 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         anotacao.title = "Praça Cívica"
         anotacao.subtitle = "Praça localizada no centro da cidade de Goiânia"
         
-        mapa.addAnnotation(anotacao)*/
+        mapa.addAnnotation(anotacao)
+        */
     }
-
+    
+    // Metodo Responsavel por atualizar localizacao quando o dispositvo esta em movimento
+    // e recuperar dados de velocidade
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let localizacaoUsuario = locations.last!
+        
+        // MONTA EXIBICAO DO MAPA
+        let latitude: CLLocationDegrees = localizacaoUsuario.coordinate.latitude
+        let longitude: CLLocationDegrees = localizacaoUsuario.coordinate.longitude
+        let localizacao: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        let deltaLatitude: CLLocationDegrees = 0.08
+        let deltaLongitude: CLLocationDegrees = 0.08
+        let areaVisualizacao: MKCoordinateSpan = MKCoordinateSpanMake(deltaLatitude, deltaLongitude)
+        
+        let regiao: MKCoordinateRegion = MKCoordinateRegionMake(localizacao, areaVisualizacao)
+        
+        mapa.setRegion(regiao, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
