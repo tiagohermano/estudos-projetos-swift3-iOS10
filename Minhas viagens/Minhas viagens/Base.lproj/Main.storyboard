@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GgL-i9-K4e">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Minhas Viagens-->
+        <scene sceneID="QJr-0a-oWD">
+            <objects>
+                <tableViewController id="CZk-M4-Xq0" customClass="LocaisViagemTableViewController" customModule="Minhas_viagens" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tzO-ZE-ncj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaReuso" id="Y1G-yp-d9h">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y1G-yp-d9h" id="Z6T-78-x3X">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Minhas Viagens" id="b3h-vx-Ob8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="o2o-VR-zaf">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="nZv-nu-DM6" kind="show" id="Z3L-9C-DS2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6oA-z1-eBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="141"/>
+        </scene>
+        <!--Mapa-->
+        <scene sceneID="tNb-H3-0Hn">
+            <objects>
+                <viewController title="Mapa" id="nZv-nu-DM6" customClass="ViewController" customModule="Minhas_viagens" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fa9-nU-QVw"/>
+                        <viewControllerLayoutGuide type="bottom" id="sXN-V3-xVu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DYl-WB-cia">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Sy8-uc-lO1"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Sy8-uc-lO1" secondAttribute="bottom" id="J6P-Jw-KaM"/>
+                            <constraint firstItem="Sy8-uc-lO1" firstAttribute="top" secondItem="Fa9-nU-QVw" secondAttribute="bottom" id="MYJ-fe-h6W"/>
+                            <constraint firstItem="Sy8-uc-lO1" firstAttribute="leading" secondItem="DYl-WB-cia" secondAttribute="leading" id="fwP-75-IL1"/>
+                            <constraint firstAttribute="trailing" secondItem="Sy8-uc-lO1" secondAttribute="trailing" id="jSH-yI-APn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapa" destination="Sy8-uc-lO1" id="gjQ-jb-fOh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14H-NK-9ek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1376.8" y="140.77961019490255"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6ql-xy-iAW">
+            <objects>
+                <navigationController id="GgL-i9-K4e" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ucX-Pr-a8e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CZk-M4-Xq0" kind="relationship" relationship="rootViewController" id="nsF-NZ-EP2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P1N-QU-eVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282" y="141"/>
+        </scene>
+    </scenes>
+</document>
