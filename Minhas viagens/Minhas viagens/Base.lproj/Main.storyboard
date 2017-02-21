@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y1G-yp-d9h" id="Z6T-78-x3X">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -30,7 +30,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="o2o-VR-zaf">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="nZv-nu-DM6" kind="show" id="Z3L-9C-DS2"/>
+                                <segue destination="nZv-nu-DM6" kind="show" identifier="verLocal" id="Z3L-9C-DS2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -74,7 +74,7 @@
         <scene sceneID="6ql-xy-iAW">
             <objects>
                 <navigationController id="GgL-i9-K4e" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ucX-Pr-a8e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ucX-Pr-a8e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

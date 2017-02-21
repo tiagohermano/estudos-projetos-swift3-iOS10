@@ -13,6 +13,7 @@
 		9B43BEF81E5B1A4100A412AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B43BEF71E5B1A4100A412AA /* Assets.xcassets */; };
 		9B43BEFB1E5B1A4100A412AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B43BEF91E5B1A4100A412AA /* LaunchScreen.storyboard */; };
 		9B43BF051E5B2FCD00A412AA /* LocaisViagemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B43BF041E5B2FCD00A412AA /* LocaisViagemTableViewController.swift */; };
+		9BB283651E5C635800DCDF6B /* ArmazenamentoDados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB283641E5C635800DCDF6B /* ArmazenamentoDados.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9B43BEFA1E5B1A4100A412AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B43BEFC1E5B1A4100A412AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B43BF041E5B2FCD00A412AA /* LocaisViagemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocaisViagemTableViewController.swift; path = ../LocaisViagemTableViewController.swift; sourceTree = "<group>"; };
+		9BB283641E5C635800DCDF6B /* ArmazenamentoDados.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmazenamentoDados.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				9B43BEF01E5B1A4100A412AA /* AppDelegate.swift */,
 				9B43BF041E5B2FCD00A412AA /* LocaisViagemTableViewController.swift */,
 				9B43BEF21E5B1A4100A412AA /* ViewController.swift */,
+				9BB283641E5C635800DCDF6B /* ArmazenamentoDados.swift */,
 				9B43BEF41E5B1A4100A412AA /* Main.storyboard */,
 				9B43BEF71E5B1A4100A412AA /* Assets.xcassets */,
 				9B43BEF91E5B1A4100A412AA /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB283651E5C635800DCDF6B /* ArmazenamentoDados.swift in Sources */,
 				9B43BEF31E5B1A4100A412AA /* ViewController.swift in Sources */,
 				9B43BEF11E5B1A4100A412AA /* AppDelegate.swift in Sources */,
 				9B43BF051E5B2FCD00A412AA /* LocaisViagemTableViewController.swift in Sources */,
@@ -301,6 +305,7 @@
 				9B43BF011E5B1A4100A412AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

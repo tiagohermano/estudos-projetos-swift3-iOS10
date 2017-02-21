@@ -10,11 +10,18 @@ import UIKit
 
 class LocaisViagemTableViewController: UITableViewController {
     
-    var locaisViagem: [String] = ["Brasil","Itália","Thailandia"]
+    var locaisViagens: [Dictionary<String,String>] = []
+    var controlerNavegacao = "adicionar"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        controlerNavegacao = "adicionar"
+        self.atualizarViagens()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,16 +38,53 @@ class LocaisViagemTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return locaisViagem.count
+        return locaisViagens.count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->
+        UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celulaReuso", for: indexPath)
         // Configure the cell...
-        cell.textLabel?.text = self.locaisViagem[indexPath.row]
+        cell.textLabel?.text = self.locaisViagens[indexPath.row]["local"]
         
         return cell
+    }
+    
+    // Método responsável por adicionar ação nativa de 'Delete' em cada Célula da TableView
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            ArmazenamentoDados().removerViagem(index: indexPath.row)
+            self.atualizarViagens()
+            
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.controlerNavegacao = "listar"
+        performSegue(withIdentifier: "verLocal", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "verLocal" {
+            let viewControllerDestino = segue.destination as! ViewController
+            
+            if self.controlerNavegacao == "listar" {
+                if let indiceRecuperado = sender {
+                    let indice = indiceRecuperado as! Int
+                    viewControllerDestino.viagem = locaisViagens[indice]
+                    viewControllerDestino.indiceSelecionado = indice
+                }
+            } else {
+                viewControllerDestino.viagem = [:]
+                viewControllerDestino.indiceSelecionado = -1
+            }
+        }
+    }
+    
+    func atualizarViagens() {
+        locaisViagens = ArmazenamentoDados().listarViagens()
+        tableView.reloadData()
     }
 
     /*
