@@ -48,22 +48,23 @@ class ViewController: UIViewController {
         let ordenacaoAZ = NSSortDescriptor(key: "nome", ascending: true)
         
         //  Ordenar de Z-A
-        let ordenacaoZA = NSSortDescriptor(key: "preco", ascending: false)
+        // let ordenacaoZA = NSSortDescriptor(key: "preco", ascending: false)
         
-        //  Aplicar Filtros
+        //  Consultas no Banco de Dados
         //let predicate = NSPredicate(format: "nome == %@", "Manteiga")
         //let predicate = NSPredicate(format: "cor contains %@", "osa")
         //let predicate = NSPredicate(format: "cor contains [c] %@", "rosa")
         //let predicate = NSPredicate(format: "nome beginswith [c] %@", "Le")
-        let filtroPreco = NSPredicate(format: "preco >= @%", "4.0")
-        let filtroNome = NSPredicate(format: "nome == @% ", "Manteiga")
+        //let filtroPreco = NSPredicate(format: "preco >= @%", "4.0")
+        //let filtroNome = NSPredicate(format: "nome == @% ", "Manteiga")
         
-        let combinacaoFiltros = NSCompoundPredicate(andPredicateWithSubpredicates: [filtroPreco, filtroNome])
+        //  Combinando consultas
+        //let combinacaoFiltros = NSCompoundPredicate(andPredicateWithSubpredicates: [filtroPreco, filtroNome])
         //let combinacaoFiltros = NSCompoundPredicate(orPredicateWithSubpredicates: filtroPreco, filtroNome)
         
-        // Aplicar filtros e requisicao
+        // Aplicar filtros e consultas
         requisicao.sortDescriptors = [ordenacaoAZ]
-        requisicao.predicate = combinacaoFiltros
+        // requisicao.predicate = combinacaoFiltros
         
         do {
             let produtos = try context.fetch(requisicao)
@@ -71,7 +72,6 @@ class ViewController: UIViewController {
                 for produto in produtos {
                     let nomeProduto = (produto as AnyObject).value(forKey: "nome")
                     let precoProduto = (produto as AnyObject).value(forKey: "preco")
-                    let corProduto = (produto as AnyObject).value(forKey: "cor")
                     
                     print(String(describing: nomeProduto) + "-" + String(describing: precoProduto))
                 }
