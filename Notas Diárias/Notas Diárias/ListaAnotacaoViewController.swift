@@ -79,7 +79,21 @@ class ListaAnotacaoViewController: UITableViewController {
 
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Efeito de deseleção da linha clicada
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        let anotacao = anotacoes[indexPath.row]
+        self.performSegue(withIdentifier: "verAnotacao", sender: anotacao)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "verAnotacao" {
+            let viewControllerDestino = segue.destination as! AnotacaoViewController
+            viewControllerDestino.anotacao = sender as? NSManagedObject
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

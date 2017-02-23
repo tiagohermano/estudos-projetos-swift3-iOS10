@@ -51,7 +51,7 @@
                     <navigationItem key="navigationItem" title="Notas Diárias" id="flX-IQ-iXI">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yqU-fQ-iKf">
                             <connections>
-                                <segue destination="ihG-iC-0Bi" kind="show" id="ClI-xp-twA"/>
+                                <segue destination="ihG-iC-0Bi" kind="show" identifier="verAnotacao" id="ClI-xp-twA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

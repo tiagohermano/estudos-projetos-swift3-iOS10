@@ -13,6 +13,7 @@ class AnotacaoViewController: UIViewController {
     
     @IBOutlet weak var texto: UITextView!
     var gerenciadorObjetos: NSManagedObjectContext!
+    var anotacao: NSManagedObject!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +24,28 @@ class AnotacaoViewController: UIViewController {
         
         //Abrir automáticamente o teclado quando abrir a tela 'Adicionar'
         self.texto.becomeFirstResponder()
-        self.texto.text = ""
+        
+        if anotacao != nil {// Atualizar anotação
+            
+            self.texto.text = anotacao.value(forKey: "texto") as? String
+            
+        } else {// salvar
+            self.texto.text = ""
+        }
+        
     }
 
     
     @IBAction func salvarAnotacao(_ sender: Any) {
-        self.salvar()
+        
+        if anotacao != nil {// Atualizar anotação
+            self.atualizar()
+            
+        } else {// salvar
+            self.salvar()
+        }
+        
+        
         
         // Retornar para a tela inicial
         _ = self.navigationController?.popToRootViewController(animated: true)
@@ -47,6 +64,19 @@ class AnotacaoViewController: UIViewController {
             print("Anotação salva com sucesso")
         } catch let erro as NSError{
             print("Não foi possível salvar a anotação. Erro: \(erro.description)")
+        }
+    }
+    
+    func atualizar() {
+        anotacao.setValue(self.texto.text, forKey: "texto")
+        anotacao.setValue(NSDate(), forKey: "data")
+        
+        // Salvar dados
+        do {
+            try gerenciadorObjetos.save()
+            print("Anotação salva com atualizar")
+        } catch let erro as NSError{
+            print("Não foi possível atualizar a anotação. Erro: \(erro.description)")
         }
     }
     
