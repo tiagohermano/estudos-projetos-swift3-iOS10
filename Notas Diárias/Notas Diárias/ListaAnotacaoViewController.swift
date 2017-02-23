@@ -32,6 +32,10 @@ class ListaAnotacaoViewController: UITableViewController {
         // Recupera todas as anotações
         let requisicao = NSFetchRequest<NSFetchRequestResult>(entityName: "Anotacao")
         
+        // Ordenação da lista de anotações de acordo com a data
+        let ordenacao = NSSortDescriptor(key: "data", ascending: false)
+        requisicao.sortDescriptors = [ordenacao]
+        
         do {
             let anotacoesRecuperadas = try gerenciadorObjetos.fetch(requisicao)
             self.anotacoes = anotacoesRecuperadas as! [NSManagedObject]
@@ -40,6 +44,28 @@ class ListaAnotacaoViewController: UITableViewController {
             print("Anotacoes recuperadas com sucesso")
         } catch let erro as NSError {
             print("Erro ao listar Anotacoes. ERRO: \(erro.description)")
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            
+            let anotacao = self.anotacoes[indexPath.row]
+            
+            // Remoção da anotação do Bando de Dados(Core Data)
+            self.gerenciadorObjetos.delete(anotacao)
+            // Remoção da anotação do Array de anotações
+            self.anotacoes.remove(at: indexPath.row)
+            
+            do {
+                try gerenciadorObjetos.save()
+                self.tableView.deleteRows(at: [indexPath], with: .bottom)
+                print("Sucesso ao deletar anotação")
+            } catch let erro as NSError {
+                print("Erro ao deletar anotação. ERRO: \(erro.localizedDescription)")
+            }
+            
+            
         }
     }
 
