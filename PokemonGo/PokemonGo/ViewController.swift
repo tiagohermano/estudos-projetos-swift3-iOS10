@@ -26,6 +26,25 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         gerenciadorLocalizacao.requestWhenInUseAuthorization()
         gerenciadorLocalizacao.startUpdatingLocation()
         
+        // Exibir Pokémons
+        // Cria anotações no mapa com as coordenadas do usuário em um intervalo determinado
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
+            print("exibe anotação")
+            
+            if let coordenadas = self.gerenciadorLocalizacao.location?.coordinate {
+                let anotacao = MKPointAnnotation()
+                
+                let latAleatoria = (Double(arc4random_uniform(400)) - 200) / 100000.0
+                let longAleatoria = (Double(arc4random_uniform(400)) - 200) / 100000.0
+                
+                anotacao.coordinate = coordenadas
+                anotacao.coordinate.latitude  += latAleatoria
+                anotacao.coordinate.longitude += longAleatoria
+                
+                self.mapa.addAnnotation(anotacao)
+            }
+            
+        }
         
     }
     
@@ -38,6 +57,27 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         } else {
             gerenciadorLocalizacao.stopUpdatingLocation()
         }
+    }
+    
+    // Método chamado sempre que uma anotação é criada
+    // Monta uma nova visualização para as anotações
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let anotacaoView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        
+        // Define uma imagem para a anotação do localização do usuário e outra para as anotações geradas
+        if annotation is MKUserLocation {
+            anotacaoView.image = #imageLiteral(resourceName: "player")
+        } else {
+            anotacaoView.image = #imageLiteral(resourceName: "pikachu-2")
+        }
+        
+        // Redefinindo o tamanho do frame da anotação(imagem)
+        var frame = anotacaoView.frame
+        frame.size.height = 40
+        frame.size.width  = 40
+        anotacaoView.frame = frame
+        
+        return anotacaoView
     }
     
     // Método para caso o acesso à localização seja negada
