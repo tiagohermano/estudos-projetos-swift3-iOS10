@@ -14,6 +14,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var mapa: MKMapView!
     var gerenciadorLocalizacao = CLLocationManager()
     var contador = 0
+    var coreDataPokemon: CoreDataPokemon!
+    var pokemons: [Pokemon] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,18 +28,26 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         gerenciadorLocalizacao.requestWhenInUseAuthorization()
         gerenciadorLocalizacao.startUpdatingLocation()
         
+        // Recuperar Pokemons
+        self.coreDataPokemon = CoreDataPokemon()
+        self.pokemons = self.coreDataPokemon.recuperarTodosPokemons()
+        
         // Exibir Pokémons
         // Cria anotações no mapa com as coordenadas do usuário em um intervalo determinado
         Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
-            print("exibe anotação")
             
             if let coordenadas = self.gerenciadorLocalizacao.location?.coordinate {
-                let anotacao = MKPointAnnotation()
+                
+                let totalPokemons = UInt32(self.pokemons.count)
+                let indicePokemonAleatorio = arc4random_uniform(totalPokemons)
+                
+                let pokemon = self.pokemons[Int(indicePokemonAleatorio)]
+                
+                let anotacao = PokemonAnotacao(coordenadas: coordenadas, pokemon: pokemon)
                 
                 let latAleatoria = (Double(arc4random_uniform(400)) - 200) / 100000.0
                 let longAleatoria = (Double(arc4random_uniform(400)) - 200) / 100000.0
                 
-                anotacao.coordinate = coordenadas
                 anotacao.coordinate.latitude  += latAleatoria
                 anotacao.coordinate.longitude += longAleatoria
                 
@@ -68,7 +78,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if annotation is MKUserLocation {
             anotacaoView.image = #imageLiteral(resourceName: "player")
         } else {
-            anotacaoView.image = #imageLiteral(resourceName: "pikachu-2")
+            let pokemon = (annotation as! PokemonAnotacao).pokemon
+            anotacaoView.image = UIImage(named: pokemon.nomeImagem!)
         }
         
         // Redefinindo o tamanho do frame da anotação(imagem)
@@ -78,6 +89,47 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         anotacaoView.frame = frame
         
         return anotacaoView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        let anotacao = view.annotation
+        let pokemon = (anotacao as! PokemonAnotacao).pokemon
+        
+        mapView.deselectAnnotation(anotacao, animated: true)
+        
+        if anotacao is MKUserLocation {
+            return
+        }
+        
+        // Centralizar na tela o Pokemon selecionado
+        if let coordAnotacao = anotacao?.coordinate {
+            let regiao = MKCoordinateRegionMakeWithDistance(coordAnotacao, 200, 200)
+            self.mapa.setRegion(regiao, animated: true)
+        }
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+            if let coord = self.gerenciadorLocalizacao.location?.coordinate {
+                if MKMapRectContainsPoint(self.mapa.visibleMapRect, MKMapPointForCoordinate(coord)) {
+                    self.coreDataPokemon.salvarPokemon(pokemon: pokemon)
+                    self.mapa.removeAnnotation(anotacao!)
+                    
+                    let alertController = UIAlertController(title: "Capturado!", message: "Você capturou o \(pokemon.nome!) ", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alertController.addAction(ok)
+                    self.present(alertController, animated: true, completion: nil)
+                } else {
+                    
+                    let alertController = UIAlertController(title: "Não Capturado!", message: "Você está muito longe do \(pokemon.nome!) para captura-lo", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alertController.addAction(ok)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+        
+        self.coreDataPokemon.salvarPokemon(pokemon: pokemon)
+        
     }
     
     // Método para caso o acesso à localização seja negada
