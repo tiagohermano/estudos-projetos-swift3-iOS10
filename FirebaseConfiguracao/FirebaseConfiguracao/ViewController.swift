@@ -17,6 +17,35 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
+        do {
+            try FIRAuth.auth()?.signOut()
+        } catch {
+            print("Erro ao deslogar o usuário")
+        }
+         */
+        
+        // Fazer login do usuário
+        FIRAuth.auth()?.signIn(withEmail: "dev13.seucondominio@gmail.com", password: "dev123456", completion: { (usuario, erro) in
+            
+            if erro == nil {
+                print("Sucesso ao fazer login do usuário")
+            } else {
+                print("Erro ao fazer login do usuário. \(erro?.localizedDescription)")
+            }
+            
+        })
+        
+        // Verificar se usuário está logado
+        FIRAuth.auth()?.addStateDidChangeListener({ (FIRAuth, usuario) in
+            if let usuarioLogado = usuario {
+                print("Usuario está logado. Email: " + String(describing: usuarioLogado.email))
+            } else {
+                print("Usuario não está logado")
+            }
+        })
+        
+        /*
         // Criar Usuário com FireBase
         FIRAuth.auth()?.createUser(withEmail: "dev13.seucondominio@gmail.com", password: "dev123456", completion: { (usuario, erro) in
             if erro == nil {
@@ -34,6 +63,7 @@ class ViewController: UIViewController {
                 print("Usuario não está logado")
             }
         })
+        */
         
         /*
         
