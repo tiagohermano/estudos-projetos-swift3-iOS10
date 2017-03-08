@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var leftImageView: UIImageView!
 
     @IBOutlet weak var leftScoreLabel: UILabel!
+    var leftScore = 0
     @IBOutlet weak var rightScoreLabel: UILabel!
+    var rightScore = 0
     
     var todasCartas:[String] = []
     
@@ -22,7 +24,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.addTodasCartas()
-        print(todasCartas)
     }
     
     func addTodasCartas() {
@@ -32,11 +33,22 @@ class ViewController: UIViewController {
         todasCartas.append("jack")
         todasCartas.append("queen")
         todasCartas.append("king")
+        todasCartas.append("ace")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func compareNumbers(cardNumber1: Int, cardNumber2: Int) -> Int{
+        if (cardNumber1 > cardNumber2) {
+            return cardNumber1
+        } else if (cardNumber1 == cardNumber2) {
+            return 0
+        } else {
+            return cardNumber2
+        }
     }
 
     @IBAction func dealTapped(_ sender: Any) {
@@ -48,6 +60,16 @@ class ViewController: UIViewController {
         
         leftImageView.image = UIImage(named: todasCartas[Int(leftNumber)])
         rightImageView.image = UIImage(named: todasCartas[Int(rightNumber)])
+        
+        // Comparação de cartas e atualização do placar
+        let comparacao = compareNumbers(cardNumber1: Int(leftNumber), cardNumber2: Int(rightNumber))
+        if (comparacao == Int(leftNumber)) {
+            leftScore += 1
+            leftScoreLabel.text = String(leftScore)
+        } else if (comparacao == Int(rightNumber)) {
+            rightScore += 1
+            rightScoreLabel.text = String(rightScore)
+        }
     }
 
 }
