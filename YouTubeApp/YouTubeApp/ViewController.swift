@@ -39,6 +39,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.textLabel?.text = videoTitle
         
+        // Construir o url do thumbnail do video
+        
+        // Criar um objeto NSURL
+        
+        // Criar um objeto de requisicao NSURL
+        
+        // Criar uma NSURLSession
+        
+        // Criar uma datatask e passar a requisicão
         
         return cell
     }
