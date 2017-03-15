@@ -9,5 +9,6 @@ target 'FirebaseConfiguracao' do
   pod 'Firebase'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'Alamofire', '~> 4.4'
 
 end
