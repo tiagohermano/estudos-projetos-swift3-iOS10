@@ -26,7 +26,7 @@ class ViewController: UIViewController {
             button.center = CGPoint(x: self.view.frame.width / 2, y: -button.frame.height)
             
             snap = UISnapBehavior(item: button, snapTo: origPos)
-            snap.damping = 0.4
+            snap.damping = 0.18
             
             animator.addBehavior(snap)
         }
