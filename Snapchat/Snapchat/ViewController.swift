@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let autenticacao = Auth.auth()
+        autenticacao.addStateDidChangeListener { (autenticacao, usuario) in
+            if let usuarioLogado = usuario {
+//                self.performSegue(withIdentifier: "autoLoginSegue", sender: nil)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,3 +35,12 @@ class ViewController: UIViewController {
 
 }
 
+extension UIViewController {
+    func exibirMensagem(titulo: String, mensagem: String) {
+        let alerta = UIAlertController(title: titulo, message: mensagem, preferredStyle: .alert)
+        let acaoDismiss = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alerta.addAction(acaoDismiss)
+        present(alerta, animated: true, completion: nil)
+    }
+}

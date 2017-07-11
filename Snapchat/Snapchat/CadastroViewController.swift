@@ -26,7 +26,13 @@ class CadastroViewController: UIViewController {
                 autenticacao.createUser(withEmail: email, password: senha, completion: { (usuario, erro) in
                     
                     if erro == nil {
-                        print("Sucesso ao cadastrar usuário")
+                        if usuario == nil {
+                            self.exibirMensagem(titulo: "Erro ao autenticar", mensagem: "Problema ao realizar autenticação. Tente novamente")
+                        } else {
+                            // Redireciona usuário para a tela principal
+                            self.performSegue(withIdentifier: "cadastroLoginSegue", sender: nil)
+                        }
+                        
                     } else {
                         // Tratamento erro login Firebase
                         let erroR = erro! as NSError
@@ -60,13 +66,6 @@ class CadastroViewController: UIViewController {
         
     }
     
-    private func exibirMensagem(titulo: String, mensagem: String) {
-        let alerta = UIAlertController(title: titulo, message: mensagem, preferredStyle: .alert)
-        let acaoDismiss = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        alerta.addAction(acaoDismiss)
-        present(alerta, animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
