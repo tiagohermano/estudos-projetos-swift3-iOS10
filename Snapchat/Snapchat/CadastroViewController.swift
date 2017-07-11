@@ -17,15 +17,6 @@ class CadastroViewController: UIViewController {
     
     @IBAction func criarConta(_ sender: Any) {
         
-        // Recuperar dados digitados
-//        if let email = self.emailTextField.text {
-//            if let senha = self.senhaTextField.text {
-//                if let senhaConfirmacao = self.senhaConfirmacaoTextField.text {
-//                    
-//                }
-//            }
-//        }
-        
         if let email = self.emailTextField.text, let senha = self.senhaTextField.text, let senhaConfirmacao = self.senhaConfirmacaoTextField.text {
             
             // Validar senha
@@ -37,7 +28,28 @@ class CadastroViewController: UIViewController {
                     if erro == nil {
                         print("Sucesso ao cadastrar usuário")
                     } else {
-                        print("Erro ao cadastrar usuário")
+                        // Tratamento erro login Firebase
+                        let erroR = erro! as NSError
+                        if let codigoErro = erroR.userInfo["error_name"] {
+                            let erroTexto = codigoErro as! String
+                            var mensagemErro = ""
+                            
+                            switch erroTexto {
+                                case "ERROR_INVALID_EMAIL":
+                                    mensagemErro = "E-mail inválido, digite um e-mail válido!"
+                                    break
+                                case "ERROR_WEAK_PASSWORD":
+                                    mensagemErro = "Senha precisa ter no mínimo 6 caracteres, com letras e números."
+                                    break
+                                case "ERROR_EMAIL_ALREADY_IN_USE":
+                                    mensagemErro = "Esse e-mail já está sendo utilizado, crie sua conta com outro e-mail."
+                                    break
+                                default:
+                                    mensagemErro = "Erro ao cadastrar usuário"
+                            }
+                            
+                            self.exibirMensagem(titulo: "Dados inválidos", mensagem: mensagemErro)
+                        }
                     }
                 })
                 
