@@ -7,9 +7,55 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CadastroViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var senhaTextField: UITextField!
+    @IBOutlet weak var senhaConfirmacaoTextField: UITextField!
+    
+    @IBAction func criarConta(_ sender: Any) {
+        
+        // Recuperar dados digitados
+//        if let email = self.emailTextField.text {
+//            if let senha = self.senhaTextField.text {
+//                if let senhaConfirmacao = self.senhaConfirmacaoTextField.text {
+//                    
+//                }
+//            }
+//        }
+        
+        if let email = self.emailTextField.text, let senha = self.senhaTextField.text, let senhaConfirmacao = self.senhaConfirmacaoTextField.text {
+            
+            // Validar senha
+            if senha == senhaConfirmacao {
+                // Criar conta no Firebase
+                let autenticacao = Auth.auth()
+                autenticacao.createUser(withEmail: email, password: senha, completion: { (usuario, erro) in
+                    
+                    if erro == nil {
+                        print("Sucesso ao cadastrar usuário")
+                    } else {
+                        print("Erro ao cadastrar usuário")
+                    }
+                })
+                
+            } else {
+                exibirMensagem(titulo: "Atenção", mensagem: "Senhas precisam ser iguais")
+            }
+        }
+        
+    }
+    
+    private func exibirMensagem(titulo: String, mensagem: String) {
+        let alerta = UIAlertController(title: titulo, message: mensagem, preferredStyle: .alert)
+        let acaoDismiss = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        alerta.addAction(acaoDismiss)
+        present(alerta, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

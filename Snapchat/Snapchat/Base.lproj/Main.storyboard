@@ -115,7 +115,7 @@
                                                 <rect key="frame" x="0.0" y="26.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -136,7 +136,7 @@
                                                 <rect key="frame" x="0.0" y="26.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -157,7 +157,7 @@
                                                 <rect key="frame" x="0.0" y="26.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -187,6 +187,9 @@
                                 <state key="normal" title="Criar Conta">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="criarConta:" destination="dEE-nn-VBt" eventType="touchUpInside" id="Fbt-U7-4Yr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -198,6 +201,11 @@
                             <constraint firstItem="qli-Ve-lhi" firstAttribute="top" secondItem="dCv-es-mov" secondAttribute="bottom" constant="40" id="y2X-9i-Bxd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Evv-8D-ajU" id="xQh-Ne-lHC"/>
+                        <outlet property="senhaConfirmacaoTextField" destination="e38-tS-SD2" id="clg-D3-r3n"/>
+                        <outlet property="senhaTextField" destination="XOC-dt-x7o" id="UIg-Z1-KRQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HF4-cS-Ju7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -231,7 +239,7 @@
                                                 <rect key="frame" x="0.0" y="26.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -252,7 +260,7 @@
                                                 <rect key="frame" x="0.0" y="26.5" width="343" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
