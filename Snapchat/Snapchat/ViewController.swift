@@ -13,12 +13,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        // Código responsável por logar usuário que já se logou anteriormente automaticamente ao abrir o app
         let autenticacao = Auth.auth()
         autenticacao.addStateDidChangeListener { (autenticacao, usuario) in
             if let usuarioLogado = usuario {
-//                self.performSegue(withIdentifier: "autoLoginSegue", sender: nil)
+                self.performSegue(withIdentifier: "autoLoginSegue", sender: nil)
             }
         }
     }
