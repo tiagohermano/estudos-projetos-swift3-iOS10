@@ -17,6 +17,7 @@ class EntrarViewController: UIViewController {
     @IBAction func logar(_ sender: Any) {
         if let email = emailTextField.text, let senha = senhaTextField.text {
             // Autenticar usuário no Firebase
+//            self.showActivityIndicator()
             let autenticacao = Auth.auth()
             autenticacao.signIn(withEmail: email, password: senha, completion: { (usuario, erro) in
                 if erro == nil {

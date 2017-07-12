@@ -43,4 +43,29 @@ extension UIViewController {
         alerta.addAction(acaoDismiss)
         present(alerta, animated: true, completion: nil)
     }
+    
+    
+    func showActivityIndicator() {
+//        let messageFrame = UIView()
+        var activityIndicator = UIActivityIndicatorView()
+        
+        let effectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        
+        activityIndicator.removeFromSuperview()
+        effectView.removeFromSuperview()
+        
+        effectView.frame.size = CGSize(width: 100.0, height: 100.0)
+        effectView.center = view.center
+        effectView.layer.cornerRadius = 10
+        effectView.layer.masksToBounds = true
+        
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityIndicator.center = CGPoint(x: effectView.frame.size.width/2, y: effectView.frame.size.height/2)
+        
+        activityIndicator.startAnimating()
+        
+        effectView.addSubview(activityIndicator)
+        
+        view.addSubview(effectView)
+    }
 }
