@@ -229,6 +229,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Evv-8D-ajU" id="xQh-Ne-lHC"/>
+                        <outlet property="nomeCompletoTextField" destination="ht0-kM-AFE" id="4Se-jX-yyF"/>
                         <outlet property="senhaConfirmacaoTextField" destination="e38-tS-SD2" id="clg-D3-r3n"/>
                         <outlet property="senhaTextField" destination="XOC-dt-x7o" id="UIg-Z1-KRQ"/>
                         <segue destination="K8s-T4-epH" kind="presentation" identifier="cadastroLoginSegue" id="KGJ-iy-YMG"/>

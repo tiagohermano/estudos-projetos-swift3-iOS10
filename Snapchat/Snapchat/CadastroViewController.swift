@@ -8,39 +8,52 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class CadastroViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var nomeCompletoTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var senhaConfirmacaoTextField: UITextField!
     
     @IBAction func criarConta(_ sender: Any) {
         
-        if let email = self.emailTextField.text, let senha = self.senhaTextField.text, let senhaConfirmacao = self.senhaConfirmacaoTextField.text {
+        if let email = self.emailTextField.text, let nomeCompleto = self.nomeCompletoTextField.text, let senha = self.senhaTextField.text, let senhaConfirmacao = self.senhaConfirmacaoTextField.text {
             
             // Validar senha
             if senha == senhaConfirmacao {
-                // Criar conta no Firebase
-                let autenticacao = Auth.auth()
-                autenticacao.createUser(withEmail: email, password: senha, completion: { (usuario, erro) in
+                
+                // Validação do nome
+                if nomeCompleto != "" {
                     
-                    if erro == nil {
-                        if usuario == nil {
-                            self.exibirMensagem(titulo: "Erro ao autenticar", mensagem: "Problema ao realizar autenticação. Tente novamente")
-                        } else {
-                            // Redireciona usuário para a tela principal
-                            self.performSegue(withIdentifier: "cadastroLoginSegue", sender: nil)
-                        }
+                    // Criar conta no Firebase
+                    let autenticacao = Auth.auth()
+                    autenticacao.createUser(withEmail: email, password: senha, completion: { (usuario, erro) in
                         
-                    } else {
-                        // Tratamento erro login Firebase
-                        let erroR = erro! as NSError
-                        if let codigoErro = erroR.userInfo["error_name"] {
-                            let erroTexto = codigoErro as! String
-                            var mensagemErro = ""
+                        if erro == nil {
+                            if usuario == nil {
+                                self.exibirMensagem(titulo: "Erro ao autenticar", mensagem: "Problema ao realizar autenticação. Tente novamente")
+                            } else {
+                                
+                                let database = Database.database().reference()
+                                let usuarios = database.child("usuarios")
+                                
+                                let usuarioDados = ["nome": nomeCompleto, "email": email]
+                                usuarios.child(usuario!.uid).setValue(usuarioDados)
+                                
+                                // Redireciona usuário para a tela principal
+                                self.performSegue(withIdentifier: "cadastroLoginSegue", sender: nil)
+                            }
                             
-                            switch erroTexto {
+                        } else {
+                            // Tratamento erro login Firebase
+                            let erroR = erro! as NSError
+                            if let codigoErro = erroR.userInfo["error_name"] {
+                                let erroTexto = codigoErro as! String
+                                var mensagemErro = ""
+                                
+                                switch erroTexto {
                                 case "ERROR_INVALID_EMAIL":
                                     mensagemErro = "E-mail inválido, digite um e-mail válido!"
                                     break
@@ -52,16 +65,20 @@ class CadastroViewController: UIViewController {
                                     break
                                 default:
                                     mensagemErro = "Erro ao cadastrar usuário"
+                                }
+                                
+                                self.exibirMensagem(titulo: "Dados inválidos", mensagem: mensagemErro)
                             }
-                            
-                            self.exibirMensagem(titulo: "Dados inválidos", mensagem: mensagemErro)
                         }
-                    }
-                })
+                    })
+                } else {
+                    exibirMensagem(titulo: "Nome", mensagem: "Digite seu nome para proseeguir")
+                }
                 
             } else {
                 exibirMensagem(titulo: "Atenção", mensagem: "Senhas precisam ser iguais")
             }
+            
         }
         
     }
