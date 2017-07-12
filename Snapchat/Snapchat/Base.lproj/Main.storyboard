@@ -103,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dCv-es-mov">
-                                <rect key="frame" x="16" y="84" width="343" height="211"/>
+                                <rect key="frame" x="16" y="84" width="343" height="288"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="zdm-O0-dGD">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="57"/>
@@ -126,8 +126,29 @@
                                             <constraint firstAttribute="trailing" secondItem="Evv-8D-ajU" secondAttribute="trailing" id="okq-3D-gR4"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="GMV-9k-Sys">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="QdB-rl-kA2">
                                         <rect key="frame" x="0.0" y="77" width="343" height="57"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-QA-mcx">
+                                                <rect key="frame" x="0.0" y="0.0" width="122" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ht0-kM-AFE">
+                                                <rect key="frame" x="0.0" y="27" width="343" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ht0-kM-AFE" secondAttribute="trailing" id="Ee7-T3-Op5"/>
+                                            <constraint firstItem="ht0-kM-AFE" firstAttribute="leading" secondItem="QdB-rl-kA2" secondAttribute="leading" id="apR-sl-mHI"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="GMV-9k-Sys">
+                                        <rect key="frame" x="0.0" y="154" width="343" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXa-gn-jVj">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="21"/>
@@ -148,7 +169,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="fP2-Mf-buo">
-                                        <rect key="frame" x="0.0" y="154" width="343" height="57"/>
+                                        <rect key="frame" x="0.0" y="231" width="343" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmar Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZU-74-etr">
                                                 <rect key="frame" x="0.0" y="0.0" width="129" height="21"/>
@@ -174,13 +195,15 @@
                                     <constraint firstItem="fP2-Mf-buo" firstAttribute="leading" secondItem="dCv-es-mov" secondAttribute="leading" id="Zss-Pe-bTW"/>
                                     <constraint firstItem="zdm-O0-dGD" firstAttribute="top" secondItem="dCv-es-mov" secondAttribute="top" id="av0-Y7-9Qs"/>
                                     <constraint firstAttribute="trailing" secondItem="zdm-O0-dGD" secondAttribute="trailing" id="bTM-6j-dUa"/>
+                                    <constraint firstItem="QdB-rl-kA2" firstAttribute="leading" secondItem="dCv-es-mov" secondAttribute="leading" id="gsg-Jb-cIJ"/>
                                     <constraint firstAttribute="trailing" secondItem="fP2-Mf-buo" secondAttribute="trailing" id="sqG-xS-U8y"/>
+                                    <constraint firstAttribute="trailing" secondItem="QdB-rl-kA2" secondAttribute="trailing" id="tl4-Dl-UD5"/>
                                     <constraint firstItem="GMV-9k-Sys" firstAttribute="leading" secondItem="dCv-es-mov" secondAttribute="leading" id="yQU-7y-a6S"/>
                                     <constraint firstAttribute="trailing" secondItem="GMV-9k-Sys" secondAttribute="trailing" id="ypT-sI-klx"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qli-Ve-lhi">
-                                <rect key="frame" x="123" y="336" width="130" height="40"/>
+                                <rect key="frame" x="123" y="412" width="130" height="40"/>
                                 <color key="backgroundColor" red="0.55294117649999996" green="0.36862745099999999" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="BKG-Zb-e9w"/>
@@ -458,6 +481,6 @@
         <image name="logo" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LCX-qO-or2"/>
+        <segue reference="KGJ-iy-YMG"/>
     </inferredMetricsTieBreakers>
 </document>

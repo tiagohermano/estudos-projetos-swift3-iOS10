@@ -67,6 +67,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F258F9451F166A5000781F8A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F27C37E31F13B6C0003EF5EA /* ViewController.swift */,
+				F20CC6211F14E88800A8A6CF /* EntrarViewController.swift */,
+				F20CC6231F14E8F400A8A6CF /* CadastroViewController.swift */,
+				F24B48C31F163CBF00294683 /* SnapsViewController.swift */,
+				F24B48C51F163D1C00294683 /* FotoViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F258F9461F166A5B00781F8A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		F27C37D51F13B6C0003EF5EA = {
 			isa = PBXGroup;
 			children = (
@@ -88,12 +107,9 @@
 		F27C37E01F13B6C0003EF5EA /* Snapchat */ = {
 			isa = PBXGroup;
 			children = (
+				F258F9461F166A5B00781F8A /* Models */,
 				F27C37E11F13B6C0003EF5EA /* AppDelegate.swift */,
-				F27C37E31F13B6C0003EF5EA /* ViewController.swift */,
-				F20CC6211F14E88800A8A6CF /* EntrarViewController.swift */,
-				F20CC6231F14E8F400A8A6CF /* CadastroViewController.swift */,
-				F24B48C31F163CBF00294683 /* SnapsViewController.swift */,
-				F24B48C51F163D1C00294683 /* FotoViewController.swift */,
+				F258F9451F166A5000781F8A /* ViewControllers */,
 				F27C37E51F13B6C0003EF5EA /* Main.storyboard */,
 				F27C37E81F13B6C0003EF5EA /* Assets.xcassets */,
 				F27C37EA1F13B6C0003EF5EA /* LaunchScreen.storyboard */,

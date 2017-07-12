@@ -15,6 +15,7 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var botaoProximo: UIButton!
     
     var imagePicker = UIImagePickerController()
+    var idImagem = NSUUID().uuidString
 
     @IBAction func proximoPasso(_ sender: Any) {
         
@@ -26,13 +27,16 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         // Recuperar a Imagem
         if let imagemSelecionada = imagem.image {
-            if let imagemDados = UIImageJPEGRepresentation(imagemSelecionada, 0.5) {
-                imagens.child("imagem.jpg").putData(imagemDados, metadata: nil, completion: { (metaDados, erro) in
+            if let imagemDados = UIImageJPEGRepresentation(imagemSelecionada, 0.1) {
+                imagens.child("\(self.idImagem).jpg").putData(imagemDados, metadata: nil, completion: { (metaDados, erro) in
                     if erro == nil {
                         print("Sucesso ao fazer upload do arquivo")
+                        print(metaDados?.downloadURL()?.absoluteString)
+                        
+                        self.botaoProximo.isEnabled = true
                         self.botaoProximo.setTitle("Próximo", for: .normal)
                     } else {
-                        
+                        self.exibirMensagem(titulo: "Upload falhou", mensagem: "Erro ao salvar o arquivo, tente novamente!")
                     }
                 })
             }
@@ -48,6 +52,9 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
 
         imagePicker.delegate = self
+        
+        botaoProximo.isEnabled = false
+        botaoProximo.backgroundColor = UIColor.gray
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,6 +68,9 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         imagem.image = imagemRecuperada
         imagePicker.dismiss(animated: true, completion: nil)
+        
+        self.botaoProximo.isEnabled = true
+        self.botaoProximo.backgroundColor = UIColor(red: 0.553, green: 0.369, blue: 0.749, alpha: 1.0)
     }
 
     /*
