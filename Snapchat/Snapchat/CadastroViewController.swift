@@ -72,7 +72,7 @@ class CadastroViewController: UIViewController {
                         }
                     })
                 } else {
-                    exibirMensagem(titulo: "Nome", mensagem: "Digite seu nome para proseeguir")
+                    exibirMensagem(titulo: "Campo 'nome' vazio", mensagem: "Digite seu nome para proseeguir")
                 }
                 
             } else {

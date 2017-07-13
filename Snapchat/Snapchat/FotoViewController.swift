@@ -31,7 +31,9 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 imagens.child("\(self.idImagem).jpg").putData(imagemDados, metadata: nil, completion: { (metaDados, erro) in
                     if erro == nil {
                         print("Sucesso ao fazer upload do arquivo")
-                        print(metaDados?.downloadURL()?.absoluteString)
+                        
+                        let url = metaDados?.downloadURL()?.absoluteString
+                        self.performSegue(withIdentifier: "selecionarUsuarioSegue", sender: url)
                         
                         self.botaoProximo.isEnabled = true
                         self.botaoProximo.setTitle("Próximo", for: .normal)
@@ -40,6 +42,15 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     }
                 })
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "selecionarUsuarioSegue" {
+            let usuarioViewController = segue.destination as! UsuariosTableViewController
+            usuarioViewController.descricao = self.descricao.text!
+            usuarioViewController.urlImagem = sender as! String
+            usuarioViewController.idImagem = self.idImagem
         }
     }
     
