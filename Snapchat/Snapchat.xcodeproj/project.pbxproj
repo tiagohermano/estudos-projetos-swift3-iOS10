@@ -21,6 +21,7 @@
 		F2F3060F1F1783F900172450 /* UsuariosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3060E1F1783F900172450 /* UsuariosTableViewController.swift */; };
 		F2F306111F17865C00172450 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F306101F17865C00172450 /* Usuario.swift */; };
 		F2F306131F17B01700172450 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F306121F17B01700172450 /* Snap.swift */; };
+		F2F306151F17C07900172450 /* DetalhesSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F306141F17C07900172450 /* DetalhesSnapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F2F3060E1F1783F900172450 /* UsuariosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuariosTableViewController.swift; sourceTree = "<group>"; };
 		F2F306101F17865C00172450 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		F2F306121F17B01700172450 /* Snap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
+		F2F306141F17C07900172450 /* DetalhesSnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesSnapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				F20CC6211F14E88800A8A6CF /* EntrarViewController.swift */,
 				F20CC6231F14E8F400A8A6CF /* CadastroViewController.swift */,
 				F24B48C31F163CBF00294683 /* SnapsViewController.swift */,
+				F2F306141F17C07900172450 /* DetalhesSnapViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F306151F17C07900172450 /* DetalhesSnapViewController.swift in Sources */,
 				F2F306111F17865C00172450 /* Usuario.swift in Sources */,
 				F24B48C41F163CBF00294683 /* SnapsViewController.swift in Sources */,
 				F2F306131F17B01700172450 /* Snap.swift in Sources */,

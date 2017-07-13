@@ -288,11 +288,72 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="I2d-b6-HQq" id="YEZ-P5-Any"/>
+                        <segue destination="NVM-Qn-Jl1" kind="presentation" identifier="detalhesSnapSegue" id="NFv-gQ-mXg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0nC-fO-570" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3732" y="245.12743628185908"/>
+        </scene>
+        <!--Detalhes Snap View Controller-->
+        <scene sceneID="bly-nx-Ke1">
+            <objects>
+                <viewController id="NVM-Qn-Jl1" customClass="DetalhesSnapViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7kp-XJ-GYb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pn8-wA-n7D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YTb-4H-f58">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kSh-lA-SGE">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TESTE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hed-Mn-wML">
+                                <rect key="frame" x="0.0" y="567" width="375" height="80"/>
+                                <color key="backgroundColor" red="0.11061954128097944" green="0.11171478426395942" blue="0.11171478426395942" alpha="0.59578339041095896" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="g89-Ia-Dlx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMW-uZ-7Ko">
+                                <rect key="frame" x="299" y="28" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.2966150887702797" green="0.29955187182741116" blue="0.29955187182741116" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="WWN-9T-r14"/>
+                                    <constraint firstAttribute="width" constant="60" id="obb-NA-Vm1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pn8-wA-n7D" firstAttribute="top" secondItem="Hed-Mn-wML" secondAttribute="bottom" constant="20" id="51a-Qo-L1j"/>
+                            <constraint firstItem="Pn8-wA-n7D" firstAttribute="top" secondItem="kSh-lA-SGE" secondAttribute="bottom" id="6hQ-6j-VGm"/>
+                            <constraint firstItem="LMW-uZ-7Ko" firstAttribute="trailing" secondItem="YTb-4H-f58" secondAttribute="trailingMargin" id="BMR-AZ-iOd"/>
+                            <constraint firstItem="Hed-Mn-wML" firstAttribute="leading" secondItem="YTb-4H-f58" secondAttribute="leading" id="DZY-kC-MQY"/>
+                            <constraint firstItem="LMW-uZ-7Ko" firstAttribute="top" secondItem="7kp-XJ-GYb" secondAttribute="bottom" constant="8" id="K4b-n1-9UE"/>
+                            <constraint firstItem="kSh-lA-SGE" firstAttribute="top" secondItem="7kp-XJ-GYb" secondAttribute="bottom" id="PRE-FE-f7N"/>
+                            <constraint firstAttribute="trailing" secondItem="Hed-Mn-wML" secondAttribute="trailing" id="TKX-5h-daU"/>
+                            <constraint firstAttribute="trailing" secondItem="kSh-lA-SGE" secondAttribute="trailing" id="kAK-25-ajk"/>
+                            <constraint firstItem="kSh-lA-SGE" firstAttribute="leading" secondItem="YTb-4H-f58" secondAttribute="leading" id="kUJ-pa-IcE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contadorLabel" destination="LMW-uZ-7Ko" id="iBL-fb-rJr"/>
+                        <outlet property="descricaoLabel" destination="Hed-Mn-wML" id="ptE-9C-f3T"/>
+                        <outlet property="snapImageView" destination="kSh-lA-SGE" id="qjJ-UW-miX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2e7-ry-63e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3732" y="998"/>
         </scene>
         <!--Novo Snap-->
         <scene sceneID="0Yb-VZ-Ib0">
