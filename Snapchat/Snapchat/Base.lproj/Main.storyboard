@@ -242,7 +242,7 @@
         <!--Snaps-->
         <scene sceneID="1l8-mP-Rl8">
             <objects>
-                <viewController id="l7H-R5-uAN" customClass="SnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="l7H-R5-uAN" customClass="SnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FZg-Bw-gds"/>
                         <viewControllerLayoutGuide type="bottom" id="yh3-GS-oJY"/>
@@ -250,7 +250,29 @@
                     <view key="view" contentMode="scaleToFill" id="xFb-jc-2GX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I2d-b6-HQq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celula" id="eZh-Va-e9g">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eZh-Va-e9g" id="65Q-Kl-dD8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I2d-b6-HQq" firstAttribute="leading" secondItem="xFb-jc-2GX" secondAttribute="leading" id="0Bx-ch-dKS"/>
+                            <constraint firstAttribute="trailing" secondItem="I2d-b6-HQq" secondAttribute="trailing" id="DJB-9T-5GP"/>
+                            <constraint firstItem="I2d-b6-HQq" firstAttribute="bottom" secondItem="yh3-GS-oJY" secondAttribute="top" id="JCH-XN-vkW"/>
+                            <constraint firstItem="I2d-b6-HQq" firstAttribute="top" secondItem="FZg-Bw-gds" secondAttribute="bottom" id="JR3-yj-A7G"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Snaps" id="EYp-xV-B6f">
                         <barButtonItem key="leftBarButtonItem" title="Sair" id="BvY-CJ-NN9">
@@ -264,6 +286,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="I2d-b6-HQq" id="YEZ-P5-Any"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0nC-fO-570" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

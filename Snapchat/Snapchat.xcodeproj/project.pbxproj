@@ -20,6 +20,7 @@
 		F27C37F41F13B72F003EF5EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F27C37F31F13B72F003EF5EA /* GoogleService-Info.plist */; };
 		F2F3060F1F1783F900172450 /* UsuariosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F3060E1F1783F900172450 /* UsuariosTableViewController.swift */; };
 		F2F306111F17865C00172450 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F306101F17865C00172450 /* Usuario.swift */; };
+		F2F306131F17B01700172450 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F306121F17B01700172450 /* Snap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		F27C37F31F13B72F003EF5EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F2F3060E1F1783F900172450 /* UsuariosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsuariosTableViewController.swift; sourceTree = "<group>"; };
 		F2F306101F17865C00172450 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		F2F306121F17B01700172450 /* Snap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				F2F306101F17865C00172450 /* Usuario.swift */,
+				F2F306121F17B01700172450 /* Snap.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			files = (
 				F2F306111F17865C00172450 /* Usuario.swift in Sources */,
 				F24B48C41F163CBF00294683 /* SnapsViewController.swift in Sources */,
+				F2F306131F17B01700172450 /* Snap.swift in Sources */,
 				F27C37E41F13B6C0003EF5EA /* ViewController.swift in Sources */,
 				F2F3060F1F1783F900172450 /* UsuariosTableViewController.swift in Sources */,
 				F27C37E21F13B6C0003EF5EA /* AppDelegate.swift in Sources */,
