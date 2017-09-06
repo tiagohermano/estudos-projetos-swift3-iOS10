@@ -14,6 +14,7 @@
 		8B275EFC1F5D72550068C7BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B275EFA1F5D72550068C7BD /* LaunchScreen.storyboard */; };
 		8B88A6C11F5EED70009C5674 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B88A6C01F5EED70009C5674 /* Page.swift */; };
 		8BDBA1071F600B53001C2304 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBA1061F600B53001C2304 /* Extensions.swift */; };
+		8BDBA1091F602EA7001C2304 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBA1081F602EA7001C2304 /* LoginCell.swift */; };
 		8BDC8D831F5ECE8400F0BF70 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC8D821F5ECE8400F0BF70 /* PageCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		8B275EFD1F5D72550068C7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B88A6C01F5EED70009C5674 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		8BDBA1061F600B53001C2304 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8BDBA1081F602EA7001C2304 /* LoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
 		8BDC8D821F5ECE8400F0BF70 /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +64,7 @@
 			children = (
 				8B275EF11F5D72550068C7BD /* AppDelegate.swift */,
 				8B275EF31F5D72550068C7BD /* ViewController.swift */,
+				8BDBA1081F602EA7001C2304 /* LoginCell.swift */,
 				8BDC8D821F5ECE8400F0BF70 /* PageCell.swift */,
 				8BDBA1061F600B53001C2304 /* Extensions.swift */,
 				8B88A6C01F5EED70009C5674 /* Page.swift */,
@@ -151,6 +154,7 @@
 				8B88A6C11F5EED70009C5674 /* Page.swift in Sources */,
 				8B275EF21F5D72550068C7BD /* AppDelegate.swift in Sources */,
 				8BDC8D831F5ECE8400F0BF70 /* PageCell.swift in Sources */,
+				8BDBA1091F602EA7001C2304 /* LoginCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
