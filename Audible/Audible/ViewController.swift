@@ -52,15 +52,44 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let button = UIButton(type: .system)
         button.setTitle("Skip", for: .normal)
         button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: .normal)
+        button.addTarget(self, action: #selector(skip), for: .touchUpInside)
         return button
     }()
     
-    let nextButton: UIButton = {
+    func skip() {
+        pageControl.currentPage = pages.count - 1
+        nextPage()
+    }
+    
+    lazy var nextButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Next", for: .normal)
         button.setTitleColor(UIColor(red: 247/255, green: 154/255, blue: 27/255, alpha: 1), for: .normal)
+        
+        button.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
         return button
     }()
+    
+    func nextPage() {
+        // when we are on the last page
+        if pageControl.currentPage == pages.count {
+            return
+        }
+        
+        // second last page
+        if pageControl.currentPage == pages.count - 1 {
+            
+            moveControllConstraintsOffScreen()
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+        
+        let indexPath = IndexPath(item: pageControl.currentPage + 1, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        pageControl.currentPage +=  1
+    }
     
     var pageControlBottomAnchor: NSLayoutConstraint?
     var skipButtonTopAnchor: NSLayoutConstraint?
@@ -135,6 +164,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: { 
                 self.view.layoutIfNeeded()
         }, completion: nil)
+    }
+    
+    fileprivate func moveControllConstraintsOffScreen() {
+        pageControlBottomAnchor?.constant = 40
+        skipButtonTopAnchor?.constant = -40
+        nextButtonTopAnchor?.constant = -40
     }
     
     fileprivate func registerCells() {
