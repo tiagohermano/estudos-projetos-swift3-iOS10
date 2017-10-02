@@ -10,6 +10,11 @@ import LBTAComponents
 
 class HomeDatasourceController: DatasourceController {
     
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        // Invalida o recalculo dos tamanhos dos items da collectionView, matendo a largura do layout no modo retrato.
+        collectionViewLayout.invalidateLayout()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
