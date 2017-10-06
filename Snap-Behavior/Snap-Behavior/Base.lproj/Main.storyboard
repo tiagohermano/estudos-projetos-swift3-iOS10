@@ -31,6 +31,9 @@
                                 <rect key="frame" x="16" y="280" width="343" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.61421954566507542" blue="0.36039494992447607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btn1Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XBe-CQ-Q6I"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4m-Ve-a5g">
                                 <rect key="frame" x="16" y="318" width="343" height="30"/>
