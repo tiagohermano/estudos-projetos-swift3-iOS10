@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Foundation
+
+
 
 class Video: NSObject {
     
+    var meuToba:String?
     var thumbnailImageName:String?
     var title:String?
     var numberOfViews: NSNumber?
